@@ -1,0 +1,31 @@
+www: World Wide Web
+http/https: Hypertext Transfer Protocol (Secured)
+websocket: Definido por una dirección IP y un puerto. Permite comunicación interactiva entre el navegador del usuario y el servidor.
+url: Uniform Resource Locators
+ajax: Es un conjunto de técnicas de desarrollo web que permiten que las aplicaciones web funcionen de forma asíncrona.
+CSS dinámico:
+web API
+UX/UI
+
+Lógica del servidor:
+Recibe datos enviados por el cliente mediante la lógica del cliente
+Los procesa
+Guarda de forma "permanente"
+
+Lógica del cliente:
+Se comunica para intercambio de datos con la lógica del servidor
+Muestra los datos del usuario mediante interfaz web
+Entiende los controles incluidos en la interfaz
+
+
+Aplicaciones de una página (SPA)
+La lógica del cliente se descarga UNA ÚNICA VEZ, de tal forma que el acceso a otras secciones solo provoca la descarga de datos. Ej:Gmail
+
+Entorno cliente:
+Multiplataforma (El navegador puede acceder a características propias del SO distinto)
+Compatibilidad entre navegadores
+Universalidad
+Actualizaciones transparentes para el ususario
+
+
+Usar camelCase para los codigos
