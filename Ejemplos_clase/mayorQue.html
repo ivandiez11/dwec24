@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Programa que pida dos números y nos diga cuál es el mayor, el menor o si son iguales. Si no son números o son menores que cero, que lo vuelva a pedir
+        function mayorQue(){
+            var num1 = parseInt(prompt("Introduce el primer numero"));
+            var num2 = parseInt(prompt("Introduce el segundo numero"));
+
+            while(num1 <= 0 || num2 <= 0 || isNaN(num1) || isNaN(num2)){
+                num1 = parseInt(prompt("Introduce el primer numero"));
+                num2 = parseInt(prompt("Introduce el segundo numero"));
+            }
+
+            if(num1 > num2){
+                console.log("El numero " + num1 + " es mayor que " + num2);
+            }else if(num1 < num2){
+                console.log("El numero " + num1 + " es menor que " + num2);
+            }else{
+                console.log("Los numeros son iguales");
+            }
+        }
+
+        window.alert(mayorQue());
+
+    </script>
+</body>
+</html>
