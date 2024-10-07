@@ -7,13 +7,59 @@
 </head>
 <body>
     <script>
+        
         //Media y suma hasta meter número negativo
         
         //Pedir 2 numeros en bucle hasta que se introduzca un numero negativo
-    function mediaSuma(){  
-        var num1 = parseInt(prompt("Introduce un numero"));
-        
+
+        /*
+        function sum(){
+        let numero = prompt("Introduce un número");
+        if (numero < 0 ) {
+            alert("El número introducido es negativo");
+        } else {
+            let suma = 0;
+            let media = 0;
+            let contador = 0;
+            
+        function obtenerSuma(){
+            let suma = 0;
+            let contador = 0;
+            let numero = prompt("Introduce un número");
+            while (numero >= 0) {
+                suma += numero;
+                contador++;
+                numero = prompt("Introduce un número");
+            }
+            return suma;
+        }
+        }
+        function media(){
+            return suma / contador;
+        }
     }
+    */
+
+    function sumaNums(suma = 0, contador = 0){
+        num = Number(prompt("Introduce un número"));
+        if (num >= 0) {
+            suma = suma+num;
+            cont++;
+            sumaNums(suma,cont);
+        } else {
+         console.log("La suma es: " + suma);
+            media(suma,cont);
+        }
+        function media(suma,cont){
+            console.log("La media es: " + suma / cont);
+        }
+    }
+
+    let cont = 0;
+    let suma = 0;
+    let num = 0;
+
+    sumaNums();
     </script>
 </body>
 </html>
