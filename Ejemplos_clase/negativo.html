@@ -12,34 +12,27 @@
         
         //Pedir 2 numeros en bucle hasta que se introduzca un numero negativo
 
-        /*
-        function sum(){
-        let numero = prompt("Introduce un número");
-        if (numero < 0 ) {
-            alert("El número introducido es negativo");
+  
+        function sum(suma = 0, contador = 0){
+        numero = Number(prompt("Introduce un número"));
+        if (numero > 0 ) {
+            suma += numero;
+            contador++;
+            sum(suma, contador);
         } else {
-            let suma = 0;
-            let media = 0;
-            let contador = 0;
-            
-        function obtenerSuma(){
-            let suma = 0;
-            let contador = 0;
-            let numero = prompt("Introduce un número");
-            while (numero >= 0) {
-                suma += numero;
-                contador++;
-                numero = prompt("Introduce un número");
-            }
-            return suma;
-        }
-        }
-        function media(){
-            return suma / contador;
+            window.alert("La suma es: " + suma);
+            media(suma, contador);
         }
     }
-    */
+        function media(suma, contador){
+        
+            window.alert("La media es: " + (suma / contador));
+        }
 
+        sum();
+    
+    
+/*
     function sumaNums(suma = 0, contador = 0){
         num = Number(prompt("Introduce un número"));
         if (num >= 0) {
@@ -60,6 +53,7 @@
     let num = 0;
 
     sumaNums();
+      */
     </script>
 </body>
 </html>
