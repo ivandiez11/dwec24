@@ -7,19 +7,19 @@
 </head>
 <body>
     <script>
-
-
     function dibujarRombo() {
         const n = 4; // Número de filas del rombo
         let output = '';
+        let blanco = '&nbsp;&nbsp;';
+        let asterisco = '*';
 
         // Primera mitad del rombo
         for (let i = 0; i < n; i++) {
             for (let j = 0; j < n - i - 1; j++) {
-                output += '&nbsp;';
+                output += blanco;
             }
             for (let k = 0; k < 2 * i + 1; k++) {
-                output += '*';
+                output += asterisco;
             }
             output += '<br>';
         }
@@ -27,14 +27,13 @@
         // Segunda mitad del rombo
         for (let i = n - 2; i >= 0; i--) {
             for (let j = 0; j < n - i - 1; j++) {
-                output += '&nbsp;';
+                output += blanco;
             }
             for (let k = 0; k < 2 * i + 1; k++) {
-                output += '*';
+                output += asterisco;
             }
             output += '<br>';
         }
-
         document.body.innerHTML = output;
     }
 

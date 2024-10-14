@@ -7,7 +7,47 @@
 </head>
 <body>
     <script>
-        
+        //Utilizando bucles, el símbolo &nbsp y la etiqueta <br>
+        /*
+    i=0   0    *     1(*)  6(blanco)
+    i=1       ***    3(*)  4(blanco)
+    i=2      *****   5(*)  2(blanco)
+    i=3     *******  7(*)  0(blanco)
+    i=4      *****   5(*)  2(blanco)
+    i=5       ***    3(*)  4(blanco)
+    i=6        *     1(*)  6(blanco)
+
+            filas = n/2 + 1
+        */
+        function dibujarRombo(){
+            const n = 4; // Número de filas del rombo
+            let output = '';
+
+            // Primera mitad del rombo
+            for (let i = 0; i < n; i++){
+            for (let j = 0; j < n - i - 1; j++) {
+                output += '&nbsp; ';
+            }
+            for (let k = 0; k < 2 * i + 1; k++) {
+                output += '*';
+            }
+            output += '<br>';
+            }
+            
+            // Segunda mitad del rombo
+            for (let i = n - 1; i > 0; i--) {
+            for (let j = 0; j < n - i; j++) {
+                output += '&nbsp; ';
+            }
+            for (let k = 0; k < 2 * i - 1; k++) {
+                output += '*';
+            }
+            output += '<br>';
+            }
+            output += '</div>';
+            document.body.innerHTML = output;
+        }
+        dibujarRombo();
     </script>
 </body>
 </html>
