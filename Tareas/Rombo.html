@@ -9,11 +9,11 @@
     <script>
 
 
-    function drawDiamond() {
-        const n = 4; // Number of rows for the upper half of the diamond
+    function dibujarRombo() {
+        const n = 4; // Número de filas del rombo
         let output = '';
 
-        // Upper half of the diamond
+        // Primera mitad del rombo
         for (let i = 0; i < n; i++) {
             for (let j = 0; j < n - i - 1; j++) {
                 output += '&nbsp;';
@@ -24,7 +24,7 @@
             output += '<br>';
         }
 
-        // Lower half of the diamond
+        // Segunda mitad del rombo
         for (let i = n - 2; i >= 0; i--) {
             for (let j = 0; j < n - i - 1; j++) {
                 output += '&nbsp;';
@@ -38,7 +38,7 @@
         document.body.innerHTML = output;
     }
 
-    drawDiamond();
+    dibujarRombo();
     </script>
 
 </body>
