@@ -26,7 +26,7 @@
             // Primera mitad del rombo
             for (let i = 0; i < n; i++){
             for (let j = 0; j < n - i - 1; j++) {
-                output += '&nbsp; ';
+                output += '&nbsp;&nbsp;';
             }
             for (let k = 0; k < 2 * i + 1; k++) {
                 output += '*';
@@ -44,7 +44,6 @@
             }
             output += '<br>';
             }
-            output += '</div>';
             document.body.innerHTML = output;
         }
         dibujarRombo();
