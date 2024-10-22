@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let cadenaIntroducida = prompt("Introduce la cadena: ");
+        console.time("inicio");
+        let cantidadPat = numeroPatrones(cadenaIntroducida);
+        console.log("Hay un total de " + cantidadPat + " patrones en " + cadenaIntroducida)
+        
+
+        function numeroPatrones(cadenaFuncion) {
+            
+            let cantidadPatrones = 0;
+            let cadenaAuxiliar = cadenaFuncion.toUpperCase();
+
+            while (cadenaAuxiliar.indexOf("00") != -1) {
+                cantidadPatrones++;
+                cadenaAuxiliar = cadenaAuxiliar.substr((cadenaAuxiliar.indexOf("00")+1));
+            }
+            cadenaAuxiliar = cadenaFuncion.toUpperCase();
+
+            while (cadenaAuxiliar.indexOf("101") != -1) {
+                cantidadPatrones++;
+                cadenaAuxiliar = cadenaAuxiliar.substr((cadenaAuxiliar.indexOf("101")+1));
+            }
+            cadenaAuxiliar = cadenaFuncion.toUpperCase();
+
+            while (cadenaAuxiliar.indexOf("ABC") != -1) {
+                cantidadPatrones++;
+                cadenaAuxiliar = cadenaAuxiliar.substr((cadenaAuxiliar.indexOf("ABC")+1));
+            }
+            cadenaAuxiliar = cadenaFuncion.toUpperCase();
+
+            while (cadenaAuxiliar.indexOf("HO") != -1) {
+                cantidadPatrones++;
+                cadenaAuxiliar = cadenaAuxiliar.substr((cadenaAuxiliar.indexOf("HO")+1));
+            }
+
+            return cantidadPatrones;
+        }
+
+        console.timeEnd("inicio");
+    </script>
+</body>
+</html>
