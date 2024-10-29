@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    Programa que pida un número que indica por cada pareja de dígitos (empezando por la derecha) los viajeros que han subido y bajado (respectivamente) 
+    en la estación de partida y en cada una de las estaciones intermedias hasta llegar a su destino.
+    Por ejemplo si se recibe el siguiente número  68573528463604, significa que partió con 4 viajeros, 
+    en la siguiente estación subieron 6 y bajaron 3, en la segunda intermedia bajaron 4 y subieron 6…
+    Se pide:
+    • Control de errores ( NaN, número incorrecto…)
+    • ¿Cuántos llegaron al final de trayecto?
+    */
+    function solicitarDatosPasajeros() {
+        let datosPasajeros;
+        do {
+            datosPasajeros = prompt("Introduce el número de pasajeros:");
+            if (isNaN(datosPasajeros) || datosPasajeros < 0) {
+                alert("Dato invalido. Introduce de nuevo los datos.");
+            }
+        } while (isNaN(datosPasajeros) || datosPasajeros < 0);
+        return datosPasajeros;
+    }
+
+    function calcularPasajeros(numero) {
+        let cadenaNumero = numero.toString();
+        let pasajeros = parseInt(cadenaNumero.slice(-1));
+        cadenaNumero = cadenaNumero.slice(0, -1);
+
+        for (let i = cadenaNumero.length - 1; i >= 0; i -= 2) {
+            let suben = parseInt(cadenaNumero.charAt(i - 1)) || 0;
+            let bajan = parseInt(cadenaNumero.charAt(i)) || 0;
+            pasajeros += suben - bajan;
+        }
+
+        window.alert(`Pasajeros al final del viaje: ${pasajeros}`);
+    }
+
+    let datosPasajeros = solicitarDatosPasajeros();
+    calcularPasajeros(datosPasajeros);
+    
+    </script>
+</body>
+</html>

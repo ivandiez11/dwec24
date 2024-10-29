@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /* let numero1 = [];    
+    numero1 = [15,8,2,9,12,65,32,7,1,10];
+    console.log(numero1[0]);
+    console.log(numero1.sort((a, b) => a - b)); 
+    
+    numero2 = numero1.slice(3,5);
+    console.log(numero2);*/
+
+    //let personasOrdenado = personas.sort((persona1,persona2) => persona1.nombre.localeCompare(persona2.nombre));
+
+    //let miArray = [15,8,2,9,12,65,32,7,1,10];
+
+    let miArray = [
+        {nombre: "Juan", edad: 25},
+        {nombre: "Ana", edad: 15},
+        {nombre: "Pedro", edad: 35},
+        {nombre: "Maria", edad: 20},
+        {nombre: "Luis", edad: 30},
+    ]    
+
+    function ordenarArray(miArray){
+        let miArrayOrdenadoEdad = miArray.sort((a, b) => a.edad - b.edad);
+        return miArrayOrdenadoEdad;
+
+        let miArrayOrdenadoNombre = miArray.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        return miArrayOrdenadoNombre;
+        console.log(miArrayOrdenadoEdad);
+        console.log(miArrayOrdenadoNombre);
+    }
+
+    console.log(ordenarArray(miArray));
+    
+    
+
+    </script>
+</body>
+</html>

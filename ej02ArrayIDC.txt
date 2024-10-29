@@ -1,0 +1,13 @@
+let continuar = true;
+    let frases = [];
+    while(continuar){
+        let frase = prompt("Introduce una frase");
+        frases.push(frase);
+        continuar = confirm("¿Quieres introducir otra frase?");
+    }
+    let fraseConcatenada = frases.join(" ");
+    let palabras = fraseConcatenada.split(" ");
+
+    window.alert("La primera palabra es: " + palabras[0] + "\nLa última palabra es: " + palabras[palabras.length - 1]);
+    window.alert("El número de palabras de la frase es: " + palabras.length);
+    window.alert(frases);
