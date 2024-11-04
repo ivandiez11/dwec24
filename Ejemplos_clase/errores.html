@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*try{
+            throw new Error("¡OhOh!");
+        }catch(e){
+            console.error(e.name + ': '+ e.message);
+        }*/
+
+        // Pedir un numero por pantalla, comprobar si el numero esta entre 1 y 12, si no está lanzar error, si esta mostrar el mes
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        let numero = prompt("Introduce un número del 1 al 12:");
+        try {
+            if ( numero < 1 || numero > 12) {
+            throw new Error("Número de mes incorrecto");
+            }
+            alert("El mes es " + meses[numero - 1]);
+        } catch (e) {
+            console.error(e.name + ': ' + e.message);
+        }
+
+    </script>
+</body>
+</html>
