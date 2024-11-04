@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+    /*
+        let contactos =[ 
+            {
+                nombre: "Maxwell Wright",
+                telefono: "(0191) 719 6495",
+                correo: "Curabitur.egestas.nunc@nonummyac.co.uk"},
+            {
+                nombre: "Raja Villareal",
+                telefono: "0866 398 2895",
+                correo: "posuere.vulputate@sed.com"},
+            {  
+                nombre: "Helen Richards",
+                telefono: "0800 1111",
+                correo: "libero@convallis.edu"}
+            ]
+            window.alert("Primer contacto: \n" + contactos[0].nombre + "\n" + contactos[0].telefono + "\n" + contactos[0].correo);
+            window.alert("Segundo contacto: \n" + contactos[1].nombre + "\n" + contactos[1].telefono + "\n" + contactos[1].correo);
+            window.alert("Tercer contacto: \n" + contactos[2].nombre + "\n" + contactos[2].telefono + "\n" + contactos[2].correo);   
+    */
+
+    let contactos = [
+        {
+            nombre: "Maxwell Wright",
+            telefono: "(0191) 719 6495",
+            correo: "Curabitur.egestas.nunc@nonummyac.co.uk"
+        },
+        {
+            nombre: "Raja Villareal",
+            telefono: "0866 398 2895",
+            correo: "posuere.vulputate@sed.com"
+        },
+        {
+            nombre: "Helen Richards",
+            telefono: "0800 1111",
+            correo: "libero@convallis.edu"
+        }
+    ];
+
+    let nombre = prompt("Introduce el nombre del nuevo contacto:");
+    let telefono = prompt("Introduce el teléfono del nuevo contacto:");
+    let correo = prompt("Introduce el correo del nuevo contacto:");
+
+    contactos.push({
+        nombre: nombre,
+        telefono: telefono,
+        correo: correo
+    });
+
+    window.alert("Primer contacto: \n" + contactos[0].nombre + "\n" + contactos[0].telefono + "\n" + contactos[0].correo);
+    window.alert("Último contacto: \n" + contactos[contactos.length - 1].nombre + "\n" + contactos[contactos.length - 1].telefono + "\n" + contactos[contactos.length - 1].correo);
+            
+    </script>
+</body>
+</html>
