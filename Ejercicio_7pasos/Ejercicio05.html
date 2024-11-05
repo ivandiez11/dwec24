@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+    /* 
+
+    let contactos = [
+        {
+            nombre: "Maxwell Wright",
+            telefono: "(0191) 719 6495",
+            correo: "Curabitur.egestas.nunc@nonummyac.co.uk"
+        },
+        {
+            nombre: "Raja Villareal",
+            telefono: "0866 398 2895",
+            correo: "posuere.vulputate@sed.com"
+        },
+        {
+            nombre: "Helen Richards",
+            telefono: "0800 1111",
+            correo: "libero@convallis.edu"
+        }
+    ];
+
+    let opcion = prompt("Elige una opción:\n1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Añadir un nuevo contacto");
+
+    if (opcion === "1") {
+        window.alert("Primer contacto: \n" + contactos[0].nombre + "\n" + contactos[0].telefono + "\n" + contactos[0].correo);
+    } else if (opcion === "2") {
+        window.alert("Último contacto: \n" + contactos[contactos.length - 1].nombre + "\n" + contactos[contactos.length - 1].telefono + "\n" + contactos[contactos.length - 1].correo);
+    } else if (opcion === "3") {
+        let nombre = prompt("Introduce el nombre del nuevo contacto:");
+        let telefono = prompt("Introduce el teléfono del nuevo contacto:");
+        let correo = prompt("Introduce el correo del nuevo contacto:");
+
+        if (nombre && telefono && correo) {
+            contactos.push({
+                nombre: nombre,
+                telefono: telefono,
+                correo: correo
+            });
+            window.alert("Nuevo contacto añadido.");
+            window.alert("Nuevo contacto: \n" + contactos[contactos.length - 1].nombre + "\n" + contactos[contactos.length - 1].telefono + "\n" + contactos[contactos.length - 1].correo);
+        } else {
+            window.alert("Faltan datos. No se ha añadido el contacto.");
+        }
+    } else {
+        window.alert("Opción no válida.");
+    }
+    */
+let contactos = [
+    {
+        nombre: "Maxwell Wright",
+        telefono: "(0191) 719 6495",
+        correo: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    },
+    {
+        nombre: "Raja Villareal",
+        telefono: "0866 398 2895",
+        correo: "posuere.vulputate@sed.com"
+    },
+    {
+        nombre: "Helen Richards",
+        telefono: "0800 1111",
+        correo: "libero@convallis.edu"
+    }
+];
+
+while (true) {
+    let opcion = prompt("Elige una opción:\n1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir");
+
+    if (opcion === "1") {
+        window.alert("Primer contacto: \n" + contactos[0].nombre + "\n" + contactos[0].telefono + "\n" + contactos[0].correo);
+    } else if (opcion === "2") {
+        window.alert("Último contacto: \n" + contactos[contactos.length - 1].nombre + "\n" + contactos[contactos.length - 1].telefono + "\n" + contactos[contactos.length - 1].correo);
+    } else if (opcion === "3") {
+        let todosContactos = contactos.map(contacto => contacto.nombre + "\n" + contacto.telefono + "\n" + contacto.correo).join("\n\n");
+        window.alert("Todos los contactos: \n" + todosContactos);
+    } else if (opcion === "4") {
+        let nombre = prompt("Introduce el nombre del nuevo contacto:");
+        let telefono = prompt("Introduce el teléfono del nuevo contacto:");
+        let correo = prompt("Introduce el correo del nuevo contacto:");
+
+        if (nombre && telefono && correo) {
+            contactos.push({
+                nombre: nombre,
+                telefono: telefono,
+                correo: correo
+            });
+            window.alert("Nuevo contacto añadido.");
+            window.alert("Nuevo contacto: \n" + contactos[contactos.length - 1].nombre + "\n" + contactos[contactos.length - 1].telefono + "\n" + contactos[contactos.length - 1].correo);
+        } else {
+            window.alert("Faltan datos. No se ha añadido el contacto.");
+        }
+    } else if (opcion === "5") {
+        break;
+    } else {
+        window.alert("Opción no válida.");
+    }
+}
+
+    </script>
+</body>
+</html>
