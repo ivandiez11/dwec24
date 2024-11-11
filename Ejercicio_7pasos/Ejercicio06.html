@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+    let contactos = [
+        {
+            nombre: "Maxwell Wright",
+            telefono: "(0191) 719 6495",
+            correo: "Curabitur.egestas.nunc@nonummyac.co.uk"
+        },
+        {
+            nombre: "Raja Villareal",
+            telefono: "0866 398 2895",
+            correo: "posuere.vulputate@sed.com"
+        },
+        {
+            nombre: "Helen Richards",
+            telefono: "0800 1111",
+            correo: "libero@convallis.edu"
+        }
+    ];
+
+    function showContact(contactos, index) {
+        if (contactos instanceof Array && index >= 0 && index < contactos.length) {
+            window.alert("Contacto: \n" + contactos[index].nombre + "\n" + contactos[index].telefono + "\n" + contactos[index].correo);
+        } else {
+            window.alert("Índice no válido.");
+        }
+    }
+
+    function showAllContacts(contactos) {
+        if (contactos instanceof Array) {
+            let todosContactos = contactos.map(contacto => contacto.nombre + "\n" + contacto.telefono + "\n" + contacto.correo).join("\n\n");
+            window.alert("Todos los contactos: \n" + todosContactos);
+        } else {
+            window.alert("Lista de contactos no válida.");
+        }
+    }
+
+    function addNewContact(contactos, nombre, telefono, correo) {
+        if (contactos instanceof Array && nombre && telefono && correo) {
+            contactos.push({
+                nombre: nombre,
+                telefono: telefono,
+                correo: correo
+            });
+            window.alert("Nuevo contacto añadido.");
+            showContact(contactos, contactos.length - 1);
+        } else {
+            window.alert("Faltan datos. No se ha añadido el contacto.");
+        }
+    }
+
+    while (true) {
+        let opcion = prompt("Elige una opción:\n1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir");
+
+        if (opcion === "1") {
+            showContact(contactos, 0);
+        } else if (opcion === "2") {
+            showContact(contactos, contactos.length - 1);
+        } else if (opcion === "3") {
+            showAllContacts(contactos);
+        } else if (opcion === "4") {
+            let nombre = prompt("Introduce el nombre del nuevo contacto:");
+            let telefono = prompt("Introduce el teléfono del nuevo contacto:");
+            let correo = prompt("Introduce el correo del nuevo contacto:");
+            addNewContact(contactos, nombre, telefono, correo);
+        } else if (opcion === "5") {
+            break;
+        } else {
+            window.alert("Opción no válida.");
+        }
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ventana"></p>
+    <script>
+
+    /* CARACTERISTICAS:
+        -Representa una ventana abierta en el navegador.
+        -Si una ventana tiene etiquetasd de tip <iframe> el navegador crea una objeto window para el html inicial y otro para cada iframe.
+        -Todos los objetos, funciones, variables... son miembros del objeto window:
+        las funciones son sus metodos; las variables globales y el DOM son propiedades.
+        -No todos los métodos sirven para 
+    */
+
+    //PROPIEDADES BÁSICAS DE WINDOW
+
+    window.name = "Mi ventana"; //Nombre de la ventana
+    var texto='';
+    texto += 'Nombre : ' + window.name + '<br>';
+    texto += 'Ancho externo: ' + window.outerWidth + '<br>';
+    texto += 'Alto externo: ' + window.outerHeight + '<br>';
+    texto += 'Ancho interno: ' + window.innerWidth + '<br>';
+    texto += 'Alto intetno: ' + window.innerHeight + '<br>';
+    texto += 'Scroll horizontal: ' + window.scrollX + '<br>';
+    texto+= 'Scroll vertical: ' + window.scrollX + '<br>';
+    texto += 'Distancia desde la izquierda: ' + window.screenX + '<br>';
+    texto += 'Distancia desde arriba: ' + window.screenY + '<br>';
+
+    document.getElementById('ventana').innerHTML = texto;
+
+    //MÉTODOS BÁSICOS DE WINDOW
+
+    var miVentana
+    //open(<url>, <nombre>, <especificaciones>...)
+        function crearVentana(){
+           // miVentana = window.open('https://www.google.es');
+           miVentana = window.open("","",'width=500,height=200');
+        }
+
+        //Esta función cierra la ventana abierta
+        function cerrarVentana(){
+            miVentana.close();
+        }
+
+        //Esta función mueve la ventana abierta
+        function moverVentana(){
+            miVentana.moveBy(300,300);  //Mueve 300 px a la derecha y abajo
+        }
+
+        //Esta función redimensiona la ventana abierta
+        function redimensionarVentana(){
+            miVentana.resizeBy(300,300); //Aumenta 300 px en ancho y alto
+        }
+
+        //Esta función da foco a la ventana abierta
+        function focoVentana(){
+            miVentana.focus();
+        }
+
+        //Esta función imprime la ventana abierta
+        function imprimirVentana(){
+            window.print();
+        }   
+
+
+    </script>
+    
+    <button onclick="crearVentana()">Abrir ventana</button> 
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="moverVentana()">Mover ventana</button>
+    <button onclick="redimensionarVentana()">Redimensionar ventana</button>
+    <button onclick="focoVentana()">Foco ventana</button>
+    <button onclick="imprimirVentana()">Imprimir ventana</button>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+ /*
+        //Realiza un script que muestre la posición de la primera vocal ( así como la propia vocal) de un texto introducido por teclado (sin metodo include).
+        let texto = prompt("Introduce un texto:");
+        let vocales = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u", "Á", "É", "Í", "Ó", "Ú", "á", "é", "í", "ó", "ú"];
+        let posicion = 0;
+
+        for (let i = 0; i < texto.length; i++) {
+            let letra = texto[i];
+            if (vocales.indexOf(letra) !== -1) {
+                posicion = i;
+                break;
+            }
+        }
+
+        window.alert(`En el texto ${texto} \nLa primera vocal es: ${texto[posicion]} \nEstá en la posición: ${(posicion + 1)}`);
+  */       
+
+        //Con metodo include
+        let texto = prompt("Introduce un texto:");
+        let vocales = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u", "Á", "É", "Í", "Ó", "Ú", "á", "é", "í", "ó", "ú"];
+        let posicion = 0;
+        
+        for(let i = 0; i < texto.length; i++){
+            let letra = texto[i];   
+            if(vocales.includes(letra)){
+                texto.charAt(i);
+                posicion = i;
+                break;
+            }
+        }
+
+        window.alert(`En el texto ${texto} \nLa primera vocal es: ${texto[posicion]} \nEstá en la posición: ${(posicion + 1)}`);
+       
+       
+    </script>
+</body>
+</html>
