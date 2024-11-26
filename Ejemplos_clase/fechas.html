@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Obtener los dias que han pasado entre hoy y otra fecha fija
+        let fechaFija = new Date("2000-01-01");
+        let fechaHoy = new Date();
+
+        let diferencia = fechaHoy - fechaFija;
+
+        let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+        let anios = Math.floor(dias / 365);
+        let meses = Math.floor((dias % 365) / 30);
+        dias = Math.floor((dias % 365) % 30);
+        let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        alert(`Han pasado ${anios} años, ${meses} meses, ${dias} días y ${horas} horas desde el 1 de enero de 2000`);
+
+        // alert("Han pasado " + dias + " días desde el 1 de enero de 2000");
+    </script>
+</body>
+</html>

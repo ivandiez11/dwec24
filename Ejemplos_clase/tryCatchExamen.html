@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const PUNTOS_CARDINALES = ['N', 'S', 'E', 'O'];
+
+        do{
+            try{
+                alert("Por favor, introduzca una cantidad entre 6 y 16 minutos");
+                var minutos = parseInt(prompt("¿De cuantos minutos dispones?"));
+
+                if(isNaN(minutos || minutos === null || minutos < 6 || minutos > 16 || minutos %! 2)){
+                   
+                }
+            } catch (error) {
+                alert.error("Error: ", error);
+            }
+        } while(minutos < 6 || minutos > 16);
+    </script>
+</body>
+</html>

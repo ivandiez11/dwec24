@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*Las calles son perfectamente cuadriculadas.
+
+        La ciudad ofrece a sus ciudadanos una aplicación para móviles (en realidad la haremos en JavaScript), 
+        generadora de paseos: cada vez que la ejecutas, proporcionas un número (los minutos que tienes libres) y 
+        recibes una secuencia de letras que representan la dirección en la que te debes dirigir durante cada minuto ('n' de norte, 's' de sur, 'o' de oeste, 'e' de este) .
+
+        Siempre caminas SOLO una manzana por cada letra (dirección) y sabes que te lleva un minuto atravesar una manzana de la ciudad.
+
+        Crea una función tal que, proporcionándole el tiempo del que dispones en minutos, obtenga una cadena de letras 
+        (tantas como minutos dispongas) que te permitirá pasear y VOLVER AL PUNTO INICIAL exactamente en los minutos introducidos (¡no quieres ni llegar temprano ni retrasarte!).
+        Nota: siempre recibirás “en la pantalla de tu dispositivo” una matriz no vacía válida que contiene una secuencia aleatoria de letras de dirección. 
+
+        La aplicación debe funcionar solo para tiempos comprendidos entre 8 y 22 minutos
+
+        */
+    
+        let minutos = parseInt(prompt("Introduce el tiempo que tienes libre en minutos (entre 8 y 22):")); //Se pide al usuario que introduzca un número
+        function generarPaseo(minutos) {   //Se crea una función para generar el paseo
+            if (minutos < 8 || minutos > 22) { //Se compueba que el numero introducido sea valido, en caso de que no lo sea se muestra un mensaje de error
+            return "Entrada no válida: el tiempo debe estar entre 8 y 22 minutos.";
+            }
+
+            const direcciones = ['n', 's', 'e', 'o']; //Se crea un array con las 4 posibles direcciones
+            let paseo = []; //Se crea un array vacío para almacenar las direcciones
+            let x = 0, y = 0; //Se crean dos variables para almacenar las coordenadas x e y del punto de partida (0,0)
+
+            for (let i = 0; i < minutos - 1; i++) { //Se crea un bucle for para recorrer el número de minutos menos uno
+            let direccion = direcciones[Math.floor(Math.random() * direcciones.length)]; //Se elige una dirección aleatoria
+            paseo.push(direccion); //Se añade la dirección al array paseo
+
+            switch (direccion) { //Se crea un switch para cambiar las coordenadas en función de la dirección elegida
+                case 'n': //en la dirección norte, la coordenada y aumenta en 1
+                y++;
+                break;
+                case 's': //en la dirección sur, la coordenada y se reduce en 1
+                y--;
+                break;
+                case 'e': //en la dirección este, la coordenada x aumenta en 1
+                x++;
+                break;
+                case 'o': //en la dirección oeste, la coordenada x se reduce en 1
+                x--;
+                break;
+            }
+            }
+
+            // Último movimiento para volver al punto de partida
+            if (x > 0) {
+            paseo.push('o');
+            } else if (x < 0) {
+            paseo.push('e');
+            } else if (y > 0) {
+            paseo.push('s');
+            } else if (y < 0) {
+            paseo.push('n');
+            }
+
+            return paseo.join(''); //Se devuelve el paseo como una cadena de caracteres
+        }
+
+        let paseo = generarPaseo(minutos);
+        window.alert(paseo);
+
+        //no vuelve al punto de partida
+
+    </script>
+</body>
+</html>

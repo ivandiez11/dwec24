@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Haz un programa en JavaScript que dibuje una pirámide invertida utilizando los números del 1 al número que indique el usuario (máximo 50), 
+        de tal forma que la primera línea contenga tantos números repetidos como el número introducido y vaya disminuyendo en una unidad en cada salto de línea. 
+        Las cifras estarán centradas en la pantalla en la medida de lo posible.
+        Simula el resultado si el número indicado es 22 y añade una captura del resultado obtenido por pantalla.
+
+        Calificación ( sobre 4 puntos)
+            • Funcionamiento ( 1,75 puntos)
+            • Bucles (0,75 ptos)
+            • Control errores (0,75 ptos)
+            • Utilización de variables, constantes y funciones con camelCase  y descriptivas. Comentarios (0,50 ptos)
+            • Aspecto gráfico (centralidad) ( 0,25 ptos)
+        */
+        
+        function dibujarPiramide() {
+            let filas = prompt("Introduce un número (máximo 50):"); //Se pide al usuario que introduzca un número
+            let numero = parseInt(filas); //Se convierte el número introducido a entero
+
+            if (isNaN(numero) || numero < 1 || numero > 50) { //Se comprueba si el número introducido es válido
+                alert("Por favor, introduce un número válido entre 1 y 50.");
+                return;
+            }
+
+            let pintar = "";
+            for (let anchoPiramide = numero; anchoPiramide >= 1; anchoPiramide--) { //Se hace un bucle for para recorrer las filas (anchoPiramide) de la pirámide
+                let linea = "";
+                for (let altoPiramide = 0; altoPiramide < anchoPiramide; altoPiramide++) { //Se hace un bucle for para recorrer las columnas(altoPiramide) de la pirámide
+                    linea += anchoPiramide + " ";
+                }
+                pintar += `<p style="text-align: center;">${linea.trim()}</p>`; //se usa la propiedad text-align para centrar el texto (Aspecto grafico)
+            }
+
+            document.body.innerHTML += pintar; //Se añade el contenido de la variable pintar al body del documento
+        }
+
+        dibujarPiramide(); //Se llama a la función para ejecutar el código
+
+    </script>
+</body>
+</html>

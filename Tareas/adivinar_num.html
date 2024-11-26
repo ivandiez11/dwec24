@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <script>
+        
         /*
         Juego: adivinar un número
         Contesta con "Es mayott" o "Es menor"
@@ -29,6 +32,66 @@
                 alert(`¡Correcto! Adivinaste el número en ${intentos} intentos.`);
             }
         }
-    </script>
+
+
+</script>
+
+
 </body>
+
+
+
+
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function generarPaseo(minutos) {
+        if (minutos < 8 || minutos > 22) {
+            console.error("El tiempo debe estar entre 8 y 22 minutos.");
+            return;
+        }
+
+        const direcciones = ['n', 's', 'e', 'o'];
+        let paseo = [];
+        let x = 0, y = 0;
+
+        for (let i = 0; i < minutos; i++) {
+            let direccion = direcciones[Math.floor(Math.random() * 4)];
+            paseo.push(direccion);
+
+            switch (direccion) {
+                case 'n': y++; break;
+                case 's': y--; break;
+                case 'e': x++; break;
+                case 'o': x--; break;
+            }
+        }
+
+        if (x === 0 && y === 0) {
+            console.log("Paseo generado:", paseo);
+        } else {
+            console.error("No se puede volver al punto inicial con el tiempo dado.");
+        }
+    }
+
+    const minutos = parseInt(prompt("Introduce los minutos disponibles para el paseo (entre 8 y 22):"), 10);
+    if (!isNaN(minutos)) {
+        generarPaseo(minutos);
+    } else {
+        console.error("Por favor, introduce un número válido.");
+    }
+        

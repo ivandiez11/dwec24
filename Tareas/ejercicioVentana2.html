@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Hacer que a los 2 segundos de abrir la pagina se abra un popup:
+        -Con un mensaje de bienvenida
+        -Con un boton que permita cerrar la ventana
+        -Con el tamaño justo para visualizar el mensaje sin barras de scroll, ni de herramientas, ni de direccion.. unicamente el mensaje y el boton
+        */
+
+        let ventana = window.open("", "", "width=500, height=200, top=100, left=200");
+        setTimeout("ventana.document.write('<h1>Bienvenido</h1><button onclick=window.close()>Cerrar</button>')", 2000);
+        
+    </script>
+</body>
+</html>
