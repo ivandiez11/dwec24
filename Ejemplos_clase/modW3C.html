@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modelo de eventos avanzados del W3</h1>
+    <h3 id="w3c">Modelo del W3</h3>
+    <h3 id="w3canonima">Modelo del W3 con funciones anónimas</h3>
+    <script>
+        document.getElementById("w3c").addEventListener("click", saludarUnaVez, false);
+        document.getElementById("w3c").addEventListener("mouseover", colorear, false);
+        document.getElementById("w3c").addEventListener("mouseover", fondo, false);
+        function saludarUnaVez(){
+            alert("Hola");
+        }
+        function colorear(){
+            document.getElementById("w3c").style.color = "yellow";
+        }
+        function fondo(){
+            document.getElementById("w3c").style.backgroundColor = "magenta";
+        }
+
+        //Funciones anónimas
+        document.getElementById("w3canonima").addEventListener("click", function() {
+            alert("Hola anonimo");
+        }, false);
+
+        document.getElementById("w3canonima").addEventListener("mouseover", function() {
+            document.getElementById("w3canonima").style.color = "lime";
+        }, false);
+
+        document.getElementById("w3canonima").addEventListener("mouseover", function() {
+            document.getElementById("w3canonima").style.backgroundColor = "black";
+        }, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+         h1{
+              text-align: center;
+         }
+         body{
+              text-align: center;
+         }
+         button{
+              margin: 10px;
+              text-align: center;
+         }
+            p{
+                text-align: center;
+                font-size: 2em;
+            }
+        
+   </style>
+</head>
+<body>
+    <h1>Reloj en tiempo real</h1>
+
+    <p id="reloj">Reloj no iniciado</p>
+    <button onclick="reloj = setInterval(iniciar,1000)">Iniciar Reloj</button>
+    <button onclick="clearInterval(reloj)">Detener Reloj</button> 
+
+    <script>
+        let reloj;  
+
+        function iniciar(){
+            var miFecha = new Date();  
+            document.getElementById("reloj").innerHTML = miFecha.toLocaleTimeString();
+        }
+        
+    </script>
+</body>
+</html>
