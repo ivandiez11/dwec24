@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Dada la lista de números:
+        const numeros = [1, 2, 3, 4, 5, 6, 3, 7, 7];
+        Usar map, filter y reduce para obtener los números duplicados, obtener los pares y la suma de todos.
+        */
+
+        const numeros = [1, 2, 3, 4, 5, 6, 3, 7, 7];
+
+        //Duplicados (multiplicar por 2)
+        let dobles = numeros.map(num => num * 2);   
+        console.log("Duplicados", dobles);
+
+        //Pares
+        let pares = numeros.filter(num => num % 2 == 0);
+        console.log("Pares", pares);
+
+        //Suma de los impares
+        let sumaImpares = numeros.filter(num => num % 2 !== 0).reduce((total, num) => total += num, 0);
+        console.log("Suma impares", sumaImpares);
+
+    </script>
+</body>
+</html>

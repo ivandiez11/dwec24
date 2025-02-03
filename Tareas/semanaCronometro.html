@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="reloj">Tiempo</p>
+
+    <script>
+        //Cronometro regresivo de 60 segundos
+        let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+        let diasConM = dias.filter(dia => dia[0] == "M");
+
+        let segundos = 6;
+        let intervalo = setInterval(function(){
+                document.getElementById("reloj").innerText = segundos;
+                segundos--;
+                if (segundos < 0){
+                    document.getElementById("reloj").innerText = "0";
+                    clearInterval(intervalo); 
+                    alert(diasConM);
+                }
+        }, 1000);       
+    
+
+        //dado un array de los dias de la semana, obtener los que empiezan por "m"
+        // let dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+        // let diasConM = dias.filter(dia => dia[0] == "m");
+        // alert("Dias de la semana que empiezan por M:", diasConM);
+    </script>
+</body>
+</html>

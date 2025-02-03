@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const json = `{
+            "name":"Manuel",
+            "life":49,
+            }`;
+
+        const user = JSON.parse(json);
+
+        console.log(user);
+        console.log(user.name); //Manuel
+        console.log(user.life); //49
+
+        //Al reves
+        const user2 = {
+            name: "Manuel",
+            life: 49,
+            talk: function() {
+                return "Hola";
+            }
+        }
+
+        JSON.stringify(user2); //{"name":"Ivan","life":50}
+
+        //Segundo parametro para filtrar
+        const user3 = {
+            name: "Manz",
+            life: 99,
+            power: 10,
+        }
+
+        JSON.stringify(user3, ["life"]) //{"life":99}
+        JSON.stringify(user3, ["name", "power"]) //{"name":"Manz","power":10}
+        JSON.stringify(user3,[]) //'{}' filtra todo
+        JSON.stringify(user3, null, 2) //{"name":"Manz","life":99,"power":10} con formato
+
+    </script>
+</body>
+</html>

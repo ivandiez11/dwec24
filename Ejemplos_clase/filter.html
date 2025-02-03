@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrayNotas = [5.2,3.9,6,9.75,7.5,3];
+        let arrayAprobados = arrayNotas.filter(nota => nota >= 5);
+        let arrayNoAprobados = arrayNotas.filter(nota => nota < 5); 
+        console.log("Aprobados", arrayAprobados);
+        console.log("No Aprobados", arrayNoAprobados);
+
+        // let arrayNotas = [5.2,3.9,6,9.75,7.5,3];
+        // let arrayAprobados = [];
+        //     for(let i = 0; i < arrayNotas.length; i++){
+        //         let nota = arrayNotas[i];
+        //         if(nota[i] >= 5){
+        //             arrayAprobados.push(nota);
+        //         }
+        //     }
+        // console.log(arrayAprobados);
+
+        //Subir notas un 10%
+        let arrayNotasSubidas = arrayNotas.map(nota => nota + nota * .1);   //5.72, 4.29, 6.6, 10.725, 8.25, 3.3
+        console.log("Notas subidas",arrayNotasSubidas);
+
+        // Sumar todas las notas
+        let sumaNotas = arrayNotas.reduce((total, nota) => total += nota,0); //35.35
+        console.log("Suma de notas", sumaNotas);
+
+        // Calcular la nota máxima
+        let maxNota = arrayNotas.reduce((max, nota) => nota > max ? nota : max, 0); //9.75
+        console.log("Nota máxima", maxNota);    
+
+        //Calcular la media
+        let notaMedia = arrayNotas.reduce((total, nota) => total += nota, 0) / arrayNotas.length; //5.891666666666667
+        console.log("Nota media", notaMedia);
+
+    </script>
+</body>
+</html>  
+//Ciera la cuenta antes de irte que te dejaste hasta el drive abierto

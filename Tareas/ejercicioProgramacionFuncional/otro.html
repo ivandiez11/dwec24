@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Se pide:
+
+            1. Filtrar los usuarios mayores de edad (mayores o igual a 18 años).
+            2. Calcular el promedio de edades de los usuarios filtrados.
+            3. Encontrar al usuario más joven de entre los filtrados.
+            4. Obtener una lista de nombres de usuarios que empiezan con la letra 'A'.
+        // Lista de usuarios
+        const usuarios = [
+        { id: 1, nombre: 'Juan', edad: 25 },
+        { id: 2, nombre: 'María', edad: 30 },
+        { id: 3, nombre: 'Pedro', edad: 20 },
+        { id: 4, nombre: 'Ana', edad: 35 },
+        { id: 5, nombre: 'Luisa', edad: 22 },
+        { id: 6, nombre: 'Alberto', edad: 19 },
+        ];
+        */
+
+        // Lista de usuarios
+        const usuarios = [
+        { id: 1, nombre: 'Juan', edad: 25 },
+        { id: 2, nombre: 'María', edad: 30 },
+        { id: 3, nombre: 'Pedro', edad: 20 },
+        { id: 4, nombre: 'Ana', edad: 35 },
+        { id: 5, nombre: 'Luisa', edad: 22 },
+        { id: 6, nombre: 'Alberto', edad: 19 },
+        ];
+
+        //1. Filtrar los usuarios mayores de edad (mayores o igual a 18 años).
+        let usuariosMayores18 = usuarios.filter(usuario => usuario.edad >= 18);
+        let nombresMayores18 = usuariosMayores18.map(usuario => usuario.nombre);
+        alert("Nombres de usuarios mayores de 18: " + nombresMayores18);
+
+        //2. Calcular el promedio de edades de los usuarios filtrados.
+        let promedioEdades = usuariosMayores18.reduce((total, usuario) => total += usuario.edad, 0) / usuariosMayores18.length;
+        alert("Promedio edades: " + promedioEdades);
+
+        //3. Encontrar al usuario más joven de entre los filtrados.
+        // let maxNota = arrayNotas.reduce((max, nota) => nota > max ? nota : max, 0);
+        let usuarioMasJoven = usuariosMayores18.reduce((min, usuario) => usuario.edad < min.edad ? usuario : min, 0);
+        alert("Usuario más joven: " + usuarioMasJoven.nombre);
+
+        //4. Obtener una lista de nombres de usuarios que empiezan con la letra 'A'.
+        let usuariosConA = usuarios.filter(usuario => usuario.nombre[0].toLowerCase() == "a");
+        let nombresConA = usuariosConA.map(usuario => usuario.nombre);
+        alert("Nombres de usuarios que empiezan con A: " + nombresConA);
+    </script>
+</body>
+</html>

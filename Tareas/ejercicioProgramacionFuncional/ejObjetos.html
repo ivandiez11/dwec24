@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Enunciado del problema:
+            Se tiene una lista de usuarios con la siguiente estructura:
+            const usuarios = [
+                { id: 1, nombre: 'Juan', edad: 25 },
+                { id: 2, nombre: 'María', edad: 30 },
+                { id: 3, nombre: 'Pedro', edad: 20 },
+                { id: 4, nombre: 'Ana', edad: 35 },
+                ];
+            Se requiere:
+             -Filtrar los usuarios mayores de 25 años.
+             -Duplicar la edad de esos usuarios filtrados.
+             -Obtener la suma total de las edades duplicadas.
+        
+        */
+
+        const usuarios = [
+                { id: 1, nombre: 'Juan', edad: 25 },
+                { id: 2, nombre: 'María', edad: 30 },
+                { id: 3, nombre: 'Pedro', edad: 20 },
+                { id: 4, nombre: 'Ana', edad: 35 },
+                ];
+
+        //Filtrar los usuarios mayores de 25 años.
+        let usuariosMayores25 = usuarios.filter(usuario => usuario.edad > 25);
+        let nombresMayores25 = usuariosMayores25.map(usuario => usuario.nombre);
+        alert("Nombres de usuarios mayores de 25: " + nombresMayores25);
+
+        //Duplicar la edad de esos usuarios filtrados.
+        let edadDuplicada = usuariosMayores25.map(usuario => usuario.edad * 2);
+        alert("Edades duplicadas: " + edadDuplicada);
+
+        //Obtener la suma total de las edades duplicadas.
+        let sumEdadDuplicada = edadDuplicada.reduce((total, edad) => total += edad, 0);
+        alert("Suma edades duplicadas: " + sumEdadDuplicada);
+
+    </script>
+</body>
+</html>

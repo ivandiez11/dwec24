@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const user = {
+        //     name: "Otto",
+        //     role: "Arquero",
+        //     life: 99,
+        //     features: ['learn', 'code', 'program']
+        // }
+
+        // const fullUser = {
+        //     ...structuredClone(user),
+        //     power: 25,
+        //     life: 50
+        // }
+
+        // fullUser.features[0]="program";
+        // console.log(user.features)
+        // console.log(fullUser.features)
+
+        // const {name, ...rest} = user;
+
+        // console.log(user.features);
+        // console.log(user.name);
+        // console.log(user.rest);
+
+
+        // console.log(Object.keys(user)); 
+        // console.log(Object.values(user));
+        // console.log(Object.entries(user));
+
+        const keys = ['name', 'life', 'power', 'talk'];
+        const values = ['Otto', 99, 25, function(){return"Hola"}];
+        
+        const entries = [];
+        // for (const [i, key] of keys.entries()) {
+        //     user[key] = values[i];
+        // }
+
+        // for (let i in keys){
+        //     user[keys[i]] = values[i];
+        // }
+        for (let i of Object.keys()){
+            const key = keys[i];
+            const value = values[i];
+            entries.push(key,);
+        }
+
+        const user = Object.fromEntries(entries);
+        console.log(user);
+
+
+    </script>
+</body>
+</html>
