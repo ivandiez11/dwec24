@@ -6,48 +6,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="formulario.js"></script>
+    <style>
+        #contador {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        #miFormulario {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        #enviar, #borrar, #google {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <form action="procesar.php" method="post" id="miFormulario">
+    <form action="procesar.php" method="post" id="miFormulario" onsubmit="return validarFormulario()"></form>
         <table border="1">
             <tr>
                 <td>Introduce tu nombre:
-                <input type="text" name="nombre" id="nombre" maxlength="15" pattern="[A-Za-z]{2-15}" title="Introduce entre 2 y 15 letras" />
+                <input type="text" name="nombre" id="nombre" maxlength="15" pattern="[A-Za-z]{2,15}" title="Introduce entre 2 y 15 letras" required />
                 </td>
             </tr>
             <tr>   
                 <td>NIF/NIE
-                    <input type="text" name="nif" id="nif" pattern="[0-9]{8}[A-Za-z]{1}" title="Introduce un NIF/NIE válido" />
+                    <input type="text" name="nif" id="nif" pattern="[0-9]{8}[A-Za-z]{1}" title="Introduce un NIF/NIE válido" required />
                 </td>
             </tr>
 
             <tr>
                 <td>Mensaje <br>
-                    <textarea name="mensaje" id="mensaje" rows="4" cols="50" maxlength="500"></textarea>
+                    <textarea name="mensaje" id="mensaje" rows="4" cols="50" maxlength="500" required oninput="contarCaracteres()"></textarea>
                     <p>Nº de caracteres escritos (max 500): </p>
                     <div id="contador">0</div>
-                    <script>
-                        //Contador de caracteres (max 500)
-                        function contarCaracteres() {
-                            var mensaje = document.getElementById("mensaje").value;
-                            var contador = mensaje.length;
-                            document.getElementById("mensaje").value = mensaje.substring(0, 500);
-                            document.getElementById("contador").innerHTML = contador;
-                            if (contador >= 500) {
-                                document.getElementById("contador").style.color = "red";
-                            } else {
-                                document.getElementById("contador").style.color = "black";
-                            }
-                        }
-                        document.getElementById("mensaje").addEventListener("input", contarCaracteres);
-                    </script>
             </tr>
     
             <tr>
                 <td>Elige un color: <br>
                 <input type="radio" name="color" value="rojo"> Rojo<br>
                 <input type="radio" name="color" value="verde"> Verde<br>
-                <input type="radio" name="color" value="azul"> Azul<br>
+                <input type="radio" name="color" value="azul" checked> Azul<br>
                 <input type="radio" name="color" value="oscuro"> Oscuro<br>
             </td>
             </tr>
@@ -66,7 +75,7 @@
         
             <tr>
                 <td>Fecha de matriculación: 
-                    <input type="date" name="fecha_matriculacion" id="fecha_matriculacion" />
+                    <input type="date" name="fecha_matriculacion" id="fecha_matriculacion" required />
                 </td>
             </tr>
 
@@ -82,18 +91,6 @@
                     Añadir nuevo curso académico: 
                     <input type="text" id="nuevo_curso" maxlength="5" pattern="\d{2}-\d{2}" title="Formato: 20-21" />
                     <button type="button" onclick="agregarCurso()">Agregar</button>
-
-                    <script>
-                        //Añadir curso académico
-                        function agregarCurso() {
-                            var nuevoCurso = document.getElementById("nuevo_curso").value;
-                            var select = document.getElementById("curso_academico");
-                            var option = document.createElement("option");
-                            option.text = nuevoCurso; 
-                            select.add(option);
-                            document.getElementById("nuevo_curso").value = "";
-                        }
-                    </script>
                 </td>
             </tr>
             
@@ -104,33 +101,14 @@
                     <input type="checkbox" name="dias" value="miercoles"> Miercoles<br>
                     <input type="checkbox" name="dias" value="jueves"> Jueves<br>
                     <input type="checkbox" name="dias" value="viernes"> Viernes<br> 
-                    <input type="checkbox" name="dias" value="todos"> Todos</br>
-                    <input type="checkbox" name="dias" value="ninguno"> Borrar</br>
-                    <script>
-                        //Seleccionar todos o ninguno
-                        function seleccionarTodos() {
-                            var dias = document.getElementsByName("dias");
-                            for (var i = 0; i < 5; i++) {
-                                dias[i].checked = true;
-                            }
-                        }
-
-                        function seleccionarNinguno() {
-                            var dias = document.getElementsByName("dias");
-                            for (var i = 0; i < dias.length; i++) {
-                                dias[i].checked = false;
-                            }
-                        }
-                        document.getElementsByName("dias")[5].addEventListener("click", seleccionarTodos);
-                        document.getElementsByName("dias")[6].addEventListener("click", seleccionarNinguno);
-                    </script>
+                    <input type="checkbox" name="dias" value="todos" onclick="seleccionarTodos()"> Todos</br>
                 </td>
             </tr>
-          
+    
             <tr>
                 <td>Selecciona el dia preferente
                     <select name="dia" id="dia">
-                        <option value="lunes">Lunes</option>
+                        <option value="lunes" selected>Lunes</option>
                         <option value="martes">Martes</option>
                         <option value="miercoles">Miercoles</option>
                         <option value="jueves">Jueves</option>
@@ -139,9 +117,9 @@
             </tr>
         </table>
          <p>
-            <input type="button" value="Haz clic para enviar informacion" id="enviar" />
-            <input type="button" value="Comenzar a rellenar de nuevo" id="borrar" />
-            <input type="button" value="Haz clic sobre mi" id="enviar" />
+            <input type="submit" value="Haz clic para enviar informacion" id="enviar" onclick="validarFormulario()"/>
+            <input type="reset" value="Comenzar a rellenar de nuevo" id="borrar" onclick="borrarDatos()"/>
+            <input type="button" value="Haz clic sobre mi" id="google" onclick="window.location.href='https://www.google.com'" />
         </p> 
     </form>
 </body>
