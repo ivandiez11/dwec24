@@ -1,0 +1,10 @@
+fecth (url,[options])
+Sin options es una GET request
+
+fetch retorna promesas por lo que se utiliza .then
+
+Ejemplo:
+fetch(https://jsonplaceHolder.typicode.com/post/).then(response=>
+console.log(response));
+
+Se obtiene un elemento de la clase response

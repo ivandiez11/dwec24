@@ -20,12 +20,5 @@ function obtenerDatosTXT() {
 
 }
 
-const cargarJSONBtn = document.querySelector('#cargarJSON');
-function obtenerDatosJSON() {
-    const url = 'data/empleados.json';
-    fetch(url)
-        .then(respuesta => respuesta.json())
-        .then(data => console.log(data));
-}
 
 

@@ -9,12 +9,12 @@
         "id": 2,
         "nombre": "Pedro",
         "empresa": "IES Barajas",
-        "trabajo": "Profesor"
+        "trabajo": "Conserje"
     },
     {
         "id": 3,
         "nombre": "Maria",
         "empresa": "IES Barajas",
-        "trabajo": "Profesor"
+        "trabajo": "Directora"
     }
 ]
